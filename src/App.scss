@@ -1,0 +1,72 @@
+@import "./var.scss";
+
+body {
+  background-color: $background-color;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background-color: $light-color;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 64px black;
+
+  .display {
+    padding: 16px;
+    text-align: right;
+    background-color: $dark-color;
+    color: $light-color;
+    font-size: 24px;
+    font-weight: 300;
+
+    span {
+      font-size: 14px;
+      color: darken($light-color, 20);
+    }
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    outline: none;
+    color: $dark-color;
+    font-size: 20px;
+    padding: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .operators {
+    display: flex;
+    button {
+      flex: 1 1 0;
+      background-color: $primary-color;
+      color: $light-color;
+      font-weight: 700;
+    }
+  }
+
+  .digits {
+    display: flex;
+    flex-wrap: wrap;
+
+    button {
+      flex: 1 1 calc(100% / 3);
+        
+      &:hover{
+          background-color: darken($light-color, 10);
+      }
+    }
+  }
+}
